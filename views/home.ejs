@@ -1,0 +1,45 @@
+<%- include('./includes/header')%>
+
+<h1><%= pageTitle %></h1>
+<p><%= content %></p>
+
+<% for(let article of articles) { %>
+  
+    <h1>
+        <a href="/posts/<%=article.getTitle%>" style="color: black; text-decoration: none;">
+            <%= article.getTitle %>
+        </a>
+    </h1>
+
+    <p id="longText" >
+        <%= article.getPost.slice(0,50) %>
+      
+        <span>
+           
+            <span id="moreText" style="display: none;">
+                <%= article.getPost.slice(51,500) %>
+              </span>
+              <a style="cursor: pointer;" onclick="toggleText(this)">Preview...
+            </a>
+        </span>
+     
+    </p>
+    
+<% } %>
+
+<script>
+    function toggleText(link) {
+      const moreText = link.parentElement.querySelector("#moreText");
+      
+      
+      if (moreText.style.display === "none") {
+        moreText.style.display = "inline";
+        link.textContent = "see less...";
+      } else {
+        moreText.style.display = "none";
+        link.textContent = "Preview...";
+      }
+    }
+  </script>
+
+<%- include('./includes/footer')%>
