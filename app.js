@@ -10,6 +10,8 @@ const composeRoutes = require('./routes/compose')
 const paramsRoutes = require('./routes/post')
 const app = express();
 const _ = require('lodash');
+const mongoose = require('./util/database')
+const Article = require('./models/articles')
 
 app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname,'views'))

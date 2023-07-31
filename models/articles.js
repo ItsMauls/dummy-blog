@@ -1,16 +1,15 @@
-const data = []
+const { Schema } = require('mongoose')
+const mongoose = require ('mongoose')
 
-module.exports = class Articles {
-    constructor(title,post) {
-        this.getTitle = title,
-        this.getPost = post
+const articleSchema = new mongoose.Schema({
+    title : {
+        type : String,
+        required : true
+    },
+    description : {
+        type : String
     }
+})
+const Article = mongoose.model('Article', articleSchema)
 
-    save() {
-        data.push(this)
-    }
-
-    static fetchAll() {
-        return data
-    }
-}
+module.exports = Article

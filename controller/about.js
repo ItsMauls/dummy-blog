@@ -1,7 +1,7 @@
-const aboutContent = "Hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Non diam phasellus vestibulum lorem sed. Platea dictumst quisque sagittis purus sit. Egestas sed sed risus pretium quam vulputate dignissim suspendisse. Mauris in aliquam sem fringilla. Semper risus in hendrerit gravida rutrum quisque non tellus orci. Amet massa vitae tortor condimentum lacinia quis vel eros. Enim ut tellus elementum sagittis vitae. Mauris ultrices eros in cursus turpis massa tincidunt dui.";
+const aboutContent = "Hello! My name is Maulana Ibrahim, and I am a programmer who has been learning for the past 3 months. Currently, I am preparing myself for a bootcamp to further enhance my skills and knowledge in the field of programming. I am enthusiastic about technology and eager to take on new challenges to grow as a developer. With a passion for coding and a determination to succeed, I am ready to embark on this exciting journey in the world of software development.";
 exports.getAbout = (req,res) => {
     res.render('about', {
-        pageTitle : 'About',
+        pageTitle : 'About Me',
         content : aboutContent
     })
 }
